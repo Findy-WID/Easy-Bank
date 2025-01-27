@@ -35,7 +35,7 @@ body{
     margin: 10px;
     text-decoration: none;
 }
-.requestInvite button, .first-main button{
+.requestInvite button, .first-main-container button{
     padding: 10px;
     border-radius: 50px;
     background-color: var(--easybank-limeGreen);
@@ -111,4 +111,13 @@ body{
     width: 50px;
     height: auto;
     margin-bottom: 10px;
-}    
+} 
+@media (max-width: 600px) {
+    body {
+        font-size: 18px;
+    }
+    .nav {
+        flex-direction: column;
+        text-align: center;
+    }
+}
