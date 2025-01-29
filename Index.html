@@ -6,6 +6,7 @@
     <title>easybank</title>
     <link rel="stylesheet" href="Style.css">
     <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <div class="easybank-container">
@@ -13,16 +14,25 @@
             <div class="logo">
                 <img src="./images/logo.svg" alt="logo">
             </div>
-            <div class="nav-links">
-                <a href="#">Home</a>
-                <a href="#">About</a>
-                <a href="#">Contact</a>
-                <a href="#">Blog</a>
-                <a href="#">Careers</a>
+            <ul class="showing">
+                <li><a href="#">Home</a> </li>
+                <li><a href="#">Contact</a> </li>
+                <li><a href="#">Blog</a> </li>
+                <li><a href="#">Careers</a> </li>
+            </ul>
+            <div class="showsidebar">
+                <button onclick="showMenu()"><i class="fas fa-bars"></i></button>
             </div>
-            <div class="requestInvite">
-                <button>Request Invite</button>
-            </div>
+            <button class="requestInvite">Request Invite</button>
+                
+            <ul class="hidden">
+                <li class="hidesidebar" onclick="hideMenu()"><i class="fas fa-times"></i></li>
+                <li><a href="#">Home</a> </li>
+                <li><a href="#">Contact</a> </li>
+                <li><a href="#">Blog</a> </li>
+                <li><a href="#">Careers</a> </li>
+                <li class="requestInvite"><button>Request Invite</button></li>
+            </ul>
         </nav>
 
         <main>
@@ -76,5 +86,18 @@
             </div>
         </main>
     </div>
+    <script>
+        const showMenu = () => {
+            const sideBar = document.querySelector('.showsidebar');
+            sideBar.style.display = 'flex';
+        };
+
+        const hideMenu = () => {
+            const sideBar = document.querySelector('.hidesidebar');
+            sideBar.style.display = "none";
+
+        };
+
+    </script>
 </body>
 </html>

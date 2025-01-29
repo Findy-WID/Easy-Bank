@@ -26,16 +26,18 @@ body{
     padding: 20px;
     border: solid green 1px;
 }
-.nav-links {
+.showing {
     display: flex;
     justify-content: space-between;
+    list-style-type: none;
 }
-.nav-links a{
+
+.showing a{
     color: black;
     margin: 10px;
     text-decoration: none;
 }
-.requestInvite button, .first-main-container button{
+.requestInvite, .first-main-container button{
     padding: 10px;
     border-radius: 50px;
     background-color: var(--easybank-limeGreen);
@@ -112,12 +114,39 @@ body{
     height: auto;
     margin-bottom: 10px;
 } 
-@media (max-width: 600px) {
+@media (min-width: 632px) and (max-width: 1024px) {
     body {
         font-size: 18px;
     }
-    .nav {
-        flex-direction: column;
-        text-align: center;
+}
+@media (max-width: 632px) {
+    body {
+        font-size: 16px;
     }
+    .hidden, .showsidebar {
+        display: flex;
+    }
+    .showing, .requestInvite{
+        display: none;
+    }
+    .fas.fa-bars {
+        display: block;
+    }   
+}
+/* Hamburger */
+
+.hidden, .showsidebar {
+    display: none;
+}
+.nav-links .li {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 50px;
+    height: 80vh;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
 }
